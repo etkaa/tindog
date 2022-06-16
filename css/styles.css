@@ -1,22 +1,9 @@
 body {
     font-family: "Montserrat";
+    text-align: center;
 }
 
-h1 {
-    font-family: "Montserrat", sans-serif;
-    font-weight: 900;
-    font-size: 3.5rem;
-    line-height: 1.5;
-}
-
-h2 {
-    font-family: "Montserrat";
-    font-weight: bold;
-    font-size: 3rem;
-    line-height: 1.5;
-}
-
-h3 {
+h1, h2, h3, h4, h5, h6 {
     font-family: "Montserrat";
     font-weight: bold;
 }
@@ -25,13 +12,35 @@ p {
     color: #8f8f8f;
 }
 
-#title {
-    background-color: #ff4c68;
-    color: white;
+/* Headings  */
+
+.big-heading {
+    font-family: "Montserrat", sans-serif;
+    font-weight: 900;
+    font-size: 3.5rem;
+    line-height: 1.5;
 }
 
+.section-heading {
+    font-size: 3rem;
+    line-height: 1.5;
+}
+
+/* Containers */
+
 .container-fluid {
-    padding: 3% 15%;
+    padding: 7% 15%;
+}
+
+/* Sections */
+
+.colored-section {
+    background-color: #ff4c68;
+    color: #fff;
+}
+
+.white-section {
+    background-color: #fff;
 }
 
 /* Navigation Bar */
@@ -56,6 +65,18 @@ p {
     font-weight: light;
 }
 
+
+/* Title Section */
+
+
+#title {
+    text-align: left;
+}
+
+#title .container-fluid {
+    padding: 3% 15% 7%;
+}
+
 /* Download Buttons */
 
 .download-button {
@@ -67,16 +88,49 @@ p {
 .title-image {
     width: 60%;
     transform: rotate(25deg);
+    position: absolute;
+    right: 30%;
 }
+
+.title-img-div {
+    position: relative;
+
+    /* 
+TITLE IMAGE POSITIONING
+Oğuz Kaan
+79 upvotes
+1 year ago
+Though Fouad's solution is the case, 
+it is not Bootstrap related, I think. 
+The CSS documentation states that absolute 
+positioning sets the element relative to the
+closest positioned ancestor, which in this 
+case the div containing the image, and positioned
+means anything besides static, hence absolute or
+relative. If the ancestor is not positioned, 
+image is absolute positioned related to next 
+positioned ancestor, and that is body, result 
+is a huge width of 60% of the whole body. 
+
+*/
+
+} 
+
+
 
 /* Features Section */
 
 #features {
-    padding: 7% 15%;
+    background-color: #fff;
+    position: relative;
+
+}
+
+.feature-title {
+    font-size: 1.5rem;
 }
 
 .feature-box {
-    text-align: center;
     padding: 5%;
 }
 
@@ -91,31 +145,24 @@ p {
 
 /* Testimonials */
 
-#testimonials {
-    text-align: center;
-    background-color: #ff4c68;
-    color: #ffff;
-}
-
 .testimonial-image {
     width: 15%;
     border-radius: 100% ;
     margin: 20px;
 }
 
+.testimonial-text {
+    font-size: 3rem;
+    line-height: 1.5;
+}
+
 #press {
-    background-color: #ff4c68;
-    text-align: center;
     padding-bottom: 3%;
 }
 
 .press-logo {
     width: 15%;
     margin: 20px 20px 50px;
-}
-
-.carousel-item {
-    padding: 7% 15%;
 }
 
 /* Pricing Section  */
@@ -125,6 +172,42 @@ p {
     text-align: center;
 }
 
+.price-text {
+    font-size: 3rem;
+    line-height: 1.5;
+}
+
 .pricing-column {
     padding: 3% 2%;
 }
+
+/* Call To Action */
+
+#footer {
+    background-color: #fff;
+}
+
+.social-icon {
+    margin: 20px 10px;
+}
+
+/* Media Queries  */
+
+@media (max-width: 991px) {
+
+    #title {
+        text-align: center;
+    }
+
+    .title-img-div {
+        margin-top: 25px;
+    }
+
+    .title-image {
+        position: static;
+        transform: rotate(0deg);
+    }
+    
+}
+
+
